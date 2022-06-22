@@ -19,4 +19,5 @@ public class ClockifyHomeAddEntryConstants {
     public static final String DISCARD_BUTTON_LOCATOR = "ID:toolbar_discard_button";
     public static final String DISCARD_DISCARD_BUTTON_LOCATOR = "ID:discard_button";
     public static final String DISCARD_CANCEL_BUTTON_LOCATOR = "ID:cancel_button";
+    public static final String CALENDAR_LOCATOR = "XPATH://android.view.View[@content-desc=\"%s\"]";
 }

@@ -71,6 +71,7 @@ public class ClockifyHomeAddEntryService {
         int hoursInt = parseInt(hours);
         int hour12 = 12;
 
+        if((hoursInt>=00) && (hoursInt <24)){
         while (!Objects.equals(hours, hoursExp)) {
             if (hoursInt < hour12){
                 click(ClockifyHomeAddEntryConstants.HOURS_NEXT_DOWN_BUTTON_LOCATOR);
@@ -80,17 +81,24 @@ public class ClockifyHomeAddEntryService {
             }
 
             hoursExp = getText(ClockifyHomeAddEntryConstants.TIME_HOURS_INPUT_LOCATOR);
+         }
+        } else{
+            System.out.println("formato de hora incorrecta" + hoursInt);
         }
 
-        while(!Objects.equals(minutes, minutesExp)){
-            if (minuteInt > min30) {
-                click(ClockifyHomeAddEntryConstants.MINUTES_NEXT_DOWN_BUTTON_LOCATOR);
+        if((minuteInt>=00) && (minuteInt <60)) {
+            while (!Objects.equals(minutes, minutesExp)) {
+                if (minuteInt > min30) {
+                    click(ClockifyHomeAddEntryConstants.MINUTES_NEXT_DOWN_BUTTON_LOCATOR);
+                }
+                if (minuteInt < min30) {
+                    click(ClockifyHomeAddEntryConstants.MINUTES_NEXT_UP_BUTTON_LOCATOR);
+                }
+                minutesExp = getText(ClockifyHomeAddEntryConstants.TIME_MINUTE_INPUT_LOCATOR);
             }
-            if (minuteInt < min30){
-                click(ClockifyHomeAddEntryConstants.MINUTES_NEXT_UP_BUTTON_LOCATOR);
-            }
-            minutesExp = getText(ClockifyHomeAddEntryConstants.TIME_MINUTE_INPUT_LOCATOR);
-        }
+        }else {
+                System.out.println("formato de hora incorrecta" + minuteInt);
+         }
     }
 
     public static void clickDiscard() {

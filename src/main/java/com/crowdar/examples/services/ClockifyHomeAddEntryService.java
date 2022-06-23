@@ -83,7 +83,7 @@ public class ClockifyHomeAddEntryService {
             hoursExp = getText(ClockifyHomeAddEntryConstants.TIME_HOURS_INPUT_LOCATOR);
          }
         } else{
-            System.out.println("formato de hora incorrecta" + hoursInt);
+            System.out.println("formato de horas incorrecta: " + hoursInt);
         }
 
         if((minuteInt>=00) && (minuteInt <60)) {
@@ -97,7 +97,7 @@ public class ClockifyHomeAddEntryService {
                 minutesExp = getText(ClockifyHomeAddEntryConstants.TIME_MINUTE_INPUT_LOCATOR);
             }
         }else {
-                System.out.println("formato de hora incorrecta" + minuteInt);
+                System.out.println("formato de minutos incorrecta: " + minuteInt);
          }
     }
 
